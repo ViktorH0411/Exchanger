@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/USD"
+        android:title="USD" />
+    <item
+        android:id="@+id/EUR"
+        android:title="EUR" />
+    <item
+        android:id="@+id/PLN"
+        android:title="PLN" />
+    <item
+        android:id="@+id/RUB"
+        android:title="RUB" />
+</menu>

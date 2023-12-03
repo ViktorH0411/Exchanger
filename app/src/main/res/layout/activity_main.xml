@@ -1,5 +1,3 @@
-<!-- res/layout/activity_main.xml -->
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,72 +6,67 @@
     android:padding="20dp"
     tools:context="MainActivity">
 
-    <LinearLayout
-        android:id="@+id/main_block"
-        android:orientation="vertical"
-        android:padding="8dp"
+    <TextView
+        android:id="@+id/currencyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="118dp"
+        android:text="Exchange UAH into:"
+        android:textColor="@color/white"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/currencyLabel"
+        android:layout_alignTop="@+id/currencyLabel"
+        android:layout_marginStart="16dp"
+        android:text="USD"
+        android:textColor="@color/white"
+        android:textSize="24dp" />
+
+    <EditText
+        android:id="@+id/moneyAmount"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/currencyLabel"
+        android:layout_marginTop="16dp"
+        android:hint="Enter amount"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white" />
 
-        <TextView
-            android:id="@+id/currencyLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Currency:"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
-            android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/resultLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/moneyAmount"
+        android:layout_marginTop="16dp"
+        android:text="Result:"
+        android:textColor="@color/white"
+        android:textSize="24dp" />
 
-        <TextView
-            android:id="@+id/currency"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="USD"
-            android:layout_below="@id/currencyLabel"
-            android:layout_marginStart="16dp"
-            android:textSize="24sp"/>
-
-        <EditText
-            android:id="@+id/moneyAmount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/currency"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:hint="Enter amount"
-            android:inputType="numberDecimal"/>
-
-        <TextView
-            android:id="@+id/resultLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Result:"
-            android:layout_below="@id/moneyAmount"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
-            android:textSize="18sp"/>
-
-        <TextView
-            android:id="@+id/result"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0.00"
-            android:layout_below="@id/resultLabel"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:textSize="24sp"/>
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/resultLabel"
+        android:layout_toEndOf="@id/resultLabel"
+        android:layout_alignTop="@id/resultLabel"
+        android:layout_marginStart="156dp"
+        android:text="0.00"
+        android:textColor="@color/white"
+        android:textSize="24dp" />
 
     <Button
         android:id="@+id/calculateButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/brez"
-        android:layout_below="@+id/main_block"
+        android:layout_below="@+id/result"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-        android:text="Calculate" />
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/dirt_blue"
+        android:text="Calculate"
+        android:textSize="16dp"
+        android:textColor="@color/white" />
 </RelativeLayout>

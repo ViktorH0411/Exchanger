@@ -3,14 +3,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/USD"
-        android:title="USD" />
+        android:title="USD"
+        android:textColor="@color/white"/>
     <item
         android:id="@+id/EUR"
-        android:title="EUR" />
+        android:title="EUR"
+        android:textColor="@color/white"/>
     <item
         android:id="@+id/PLN"
-        android:title="PLN" />
+        android:title="PLN"
+        android:textColor="@color/white"/>
     <item
         android:id="@+id/RUB"
-        android:title="RUB" />
+        android:title="RUB"
+        android:textColor="@color/white"/>
 </menu>

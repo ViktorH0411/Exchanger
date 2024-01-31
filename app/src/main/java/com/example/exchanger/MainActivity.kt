@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                 runOnUiThread {
                     val moneyAmountText = moneyAmount.text.toString()
                     if (moneyAmountText.isNotEmpty()) {
-                        val amount = moneyAmountText.toDouble()
+                        val amount = moneyAmountText.toFloat()
                         val conversionRate = when (selectedCurrency) {
                             "USD" -> resValue.conversion_rates.USD
                             "EUR" -> resValue.conversion_rates.EUR

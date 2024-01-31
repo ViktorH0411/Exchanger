@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/currencyLabel"
         android:layout_alignTop="@+id/currencyLabel"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="96dp"
         android:text="USD"
         android:textColor="@color/white"
         android:textSize="24dp" />
@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/currencyLabel"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:hint="Enter amount"
         android:inputType="numberDecimal"
         android:textColor="@color/white" />
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/moneyAmount"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:text="Result:"
         android:textColor="@color/white"
         android:textSize="24dp" />
@@ -64,8 +64,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/result"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
-        android:backgroundTint="@color/dirt_blue"
+        android:layout_marginTop="64dp"
+        android:backgroundTint="@color/black"
         android:text="Calculate"
         android:textSize="16dp"
         android:textColor="@color/white" />

@@ -1,5 +1,6 @@
 package com.example.exchanger
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var currency: TextView
     private lateinit var result: TextView
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -40,16 +42,13 @@ class MainActivity : AppCompatActivity() {
         popupMenu.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.USD -> {
-                    currency.text = "USD"
+                    currency.text = "\uD83C\uDDFA\uD83C\uDDF8 USD"
                 }
                 R.id.EUR -> {
-                    currency.text = "EUR"
+                    currency.text = "\uD83C\uDDEA\uD83C\uDDFA EUR"
                 }
                 R.id.PLN -> {
-                    currency.text = "PLN"
-                }
-                R.id.RUB -> {
-                    currency.text = "RUB"
+                    currency.text = "\uD83C\uDDF5\uD83C\uDDF1 PLN"
                 }
             }
             false
@@ -65,10 +64,9 @@ class MainActivity : AppCompatActivity() {
                     if (moneyAmountText.isNotEmpty()) {
                         val amount = moneyAmountText.toFloat()
                         val conversionRate = when (selectedCurrency) {
-                            "USD" -> resValue.conversion_rates.USD
-                            "EUR" -> resValue.conversion_rates.EUR
-                            "PLN" -> resValue.conversion_rates.PLN
-                            "RUB" -> resValue.conversion_rates.RUB
+                            "\uD83C\uDDFA\uD83C\uDDF8 USD" -> resValue.conversion_rates.USD
+                            "\uD83C\uDDEA\uD83C\uDDFA EUR" -> resValue.conversion_rates.EUR
+                            "\uD83C\uDDF5\uD83C\uDDF1 PLN" -> resValue.conversion_rates.PLN
                             else -> 1.0  // Default to 1.0 if currency is not recognized
                         }
 

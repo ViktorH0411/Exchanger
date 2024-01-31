@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/background_color"
     android:padding="20dp"
     tools:context="MainActivity">
 
@@ -12,18 +12,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="118dp"
         android:text="Exchange UAH into:"
-        android:textColor="@color/white"
-        android:textSize="24dp" />
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:elevation="4dp"/>
 
     <TextView
+
         android:id="@+id/currency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/currencyLabel"
         android:layout_alignTop="@+id/currencyLabel"
-        android:layout_marginStart="96dp"
-        android:text="USD"
-        android:textColor="@color/white"
+        android:layout_marginStart="63dp"
+        android:text="🇺🇸 USD"
+        android:textColor="@color/black"
         android:textSize="24dp" />
 
     <EditText
@@ -34,7 +36,7 @@
         android:layout_marginTop="32dp"
         android:hint="Enter amount"
         android:inputType="numberDecimal"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/resultLabel"
@@ -43,7 +45,7 @@
         android:layout_below="@id/moneyAmount"
         android:layout_marginTop="32dp"
         android:text="Result:"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="24dp" />
 
     <TextView
@@ -55,7 +57,7 @@
         android:layout_alignTop="@id/resultLabel"
         android:layout_marginStart="156dp"
         android:text="0.00"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="24dp" />
 
     <Button
@@ -68,5 +70,5 @@
         android:backgroundTint="@color/black"
         android:text="Calculate"
         android:textSize="16dp"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"/>
 </RelativeLayout>

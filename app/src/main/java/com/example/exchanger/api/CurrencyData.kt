@@ -8,5 +8,4 @@ data class Rate(
     val USD: Double,
     val EUR: Double,
     val PLN: Double,
-    val RUB: Double
 )

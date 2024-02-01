@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var moneyAmount: EditText
     private lateinit var currency: TextView
     private lateinit var result: TextView
+    private lateinit var mainCurrency: TextView
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         moneyAmount = findViewById(R.id.moneyAmount)
         currency = findViewById(R.id.currency)
         result = findViewById(R.id.result)
+        mainCurrency= findViewById(R.id.mainCurrency)
+        var base_code: String = "UAH"
 
         val retrofit = Retrofit.Builder()
             .baseUrl("https://v6.exchangerate-api.com/")
@@ -50,6 +53,33 @@ class MainActivity : AppCompatActivity() {
                 R.id.PLN -> {
                     currency.text = "\uD83C\uDDF5\uD83C\uDDF1 PLN"
                 }
+                R.id.UAH -> {
+                    currency.text = "\uD83C\uDDFA\uD83C\uDDE6 UAH"
+                }
+            }
+            false
+        }
+
+        val popupMenu1 = PopupMenu(this, mainCurrency)
+        popupMenu1.inflate(R.menu.popup_menu)
+        popupMenu1.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.USD -> {
+                    mainCurrency.text = "\uD83C\uDDFA\uD83C\uDDF8 USD"
+                    base_code = "USD"
+                }
+                R.id.EUR -> {
+                    mainCurrency.text = "\uD83C\uDDEA\uD83C\uDDFA EUR"
+                    base_code = "EUR"
+                }
+                R.id.PLN -> {
+                    mainCurrency.text = "\uD83C\uDDF5\uD83C\uDDF1 PLN"
+                    base_code = "PLN"
+                }
+                R.id.UAH -> {
+                    mainCurrency.text = "\uD83C\uDDFA\uD83C\uDDE6 UAH"
+                    base_code = "UAH"
+                }
             }
             false
         }
@@ -57,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         calculateButton.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 val selectedCurrency = currency.text.toString()
-                val resValue = mainApi.getCurrencyRate("UAH")
+                val resValue = mainApi.getCurrencyRate(base_code)
 
                 runOnUiThread {
                     val moneyAmountText = moneyAmount.text.toString()
@@ -67,6 +97,7 @@ class MainActivity : AppCompatActivity() {
                             "\uD83C\uDDFA\uD83C\uDDF8 USD" -> resValue.conversion_rates.USD
                             "\uD83C\uDDEA\uD83C\uDDFA EUR" -> resValue.conversion_rates.EUR
                             "\uD83C\uDDF5\uD83C\uDDF1 PLN" -> resValue.conversion_rates.PLN
+                            "\uD83C\uDDFA\uD83C\uDDE6 UAH" -> resValue.conversion_rates.UAH
                             else -> 1.0  // Default to 1.0 if currency is not recognized
                         }
 
@@ -82,6 +113,10 @@ class MainActivity : AppCompatActivity() {
 
         currency.setOnClickListener {
             popupMenu.show()
+        }
+
+        mainCurrency.setOnClickListener {
+            popupMenu1.show()
         }
     }
 }

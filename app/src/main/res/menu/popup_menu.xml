@@ -2,6 +2,10 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/UAH"
+        android:title="🇺🇦 UAH"
+        android:textColor="@color/white"/>
+    <item
         android:id="@+id/USD"
         android:title="🇺🇸 USD"
         android:textColor="@color/white"/>
